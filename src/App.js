@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-// import Routes from './routes';
+import Routes from './routes';
 import GlobalStyle from './styles/GlobalStyle'
 import store from './Store/index';
 import { Provider } from 'react-redux';
@@ -9,7 +9,7 @@ function App() {
     <Provider store={store.store}>
       <BrowserRouter>
         <GlobalStyle />
-        {/* <Routes /> */}
+        <Routes />
       </BrowserRouter>
     </Provider>
   );

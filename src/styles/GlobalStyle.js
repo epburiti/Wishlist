@@ -5,7 +5,6 @@ export default createGlobalStyle`
  :root {
     --white: #FFFFFF;
     --main: #e5e5e5;
-    --btn:#006ee3;
     --colorInput: #6c6c80;
     --black0: #202020;
     --black1: #404040;
@@ -14,28 +13,47 @@ export default createGlobalStyle`
     --red: #FF1510;
     --pink: #FDECEC;
     --green: #E7F6E7;
+    --purple: #5a2d82;
   }
-  *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: 'Work Sans', sans-serif;
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  }
-  html,body, #root{
-    background:var(--white);
-  }
-  *,button,input{
-    border:0;
-    background:none;
-    margin:0;
-  }
-  body {
-    font-size:1.6rem;
-  }
+  @media (max-width: 1080px) {
   html {
-  /* a cada 1rem será considera 10px */
-  font-size: 62.5%;
+    font-size: 93.75%;
+  }
+}
+
+@media (max-width: 720px) {
+  html {
+    font-size: 87.5%;
+  }
+}
+
+body {
+  min-width: 380px;
+  background: var(--background);
+  color: var(--text);
+}
+
+body,
+input,
+select,
+textarea,
+button {
+  font: 400 1rem 'Montserrat', sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 `;
