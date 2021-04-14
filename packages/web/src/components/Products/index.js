@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import api from '../../services/api';
+import { formatPrice } from '../../utils/format';
 import HeartIcon from '../HeartIcon';
 import { Container } from './styles';
 
 function Products() {
   const [products, setProducts] = useState([]);
-  useEffect(async () => {
+  async function getData() {
     const { data } = await api.get();
     setProducts(data.products);
+  }
+  useEffect(() => {
+    getData();
   }, []);
   return (
     <Container>
@@ -18,7 +22,7 @@ function Products() {
           </div>
           <img src={item.image} alt={item.title} />
           <p className="title">{item.title}</p>
-          <p className="price">{item.price}</p>
+          <p className="price">{formatPrice(item.price)}</p>
         </div>
       ))}
     </Container>

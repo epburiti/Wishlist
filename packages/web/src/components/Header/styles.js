@@ -50,6 +50,8 @@ export const Container = styled.div`
           height: 3rem;
           border-radius: 0.5rem;
           margin-top: 1rem;
+          padding-left: 3rem;
+          color: var(--black2);
         }
       }
     }

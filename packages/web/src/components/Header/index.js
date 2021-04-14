@@ -24,7 +24,7 @@ function Header() {
           </ul>
           <div className="search">
             <FaSearch size={15} color="black" className="custom-icon" />
-            <input type="text" />
+            <input type="text" placeholder="Busca" />
           </div>
         </div>
       </div>
