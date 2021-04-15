@@ -1,5 +1,5 @@
-const app = require("./app");
-const http = require("http");
+const http = require('http');
+const app = require('./app');
 
 const server = http.createServer(app);
 // prod
@@ -8,10 +8,9 @@ const server = http.createServer(app);
 const port = 8080;
 
 server.listen(port, () => console.log(`Servidor rodando na porta ${port}`));
-server.on("liste", onListening);
-function onListening() {
-  const addr = server.address();
+// server.on('liste', onListening);
+// function onListening() {
+//   const addr = server.address();
 
-  const bind =
-    typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
-}
+//   const bind = typeof addr === 'string' ? `pipe ${addr}` : `port ${addr.port}`;
+// }

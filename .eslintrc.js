@@ -31,7 +31,9 @@ module.exports = {
     "radix": 'off',
     eqeqeq: ["off", "smart"],
     "react/prop-types": "off",
-    "no-param-reassign": [2, { "props": false }]
+    "no-param-reassign": [2, { "props": false }],
+    "react/jsx-props-no-spreading": "off",
+    "class-methods-use-this": "off",
   },
 
 };

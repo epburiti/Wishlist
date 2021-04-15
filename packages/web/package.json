@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@babel/preset-flow": "^7.13.13",
+    "axios": "^0.21.1",
     "immer": "^9.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

@@ -1,10 +1,6 @@
-"use strict";
-
-const express = require("express");
-const path = require("path");
-const bodyParser = require("body-parser");
-const cors = require("cors");
-const routes = require("./routes");
+const express = require('express');
+const cors = require('cors');
+const routes = require('./routes');
 
 class Server {
   constructor() {

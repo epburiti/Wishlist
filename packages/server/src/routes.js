@@ -15,5 +15,4 @@ routes.post('/favorites', favoritesController.post);
 routes.delete('/favorites', favoritesController.delete);
 // /favoritesController
 
-
 module.exports = routes;
