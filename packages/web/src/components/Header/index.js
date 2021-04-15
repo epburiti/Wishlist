@@ -1,5 +1,6 @@
 import React from 'react';
-import { FaMapMarkerAlt, FaPhoneAlt, FaHeart, FaSearch } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaPhoneAlt, FaHeart } from 'react-icons/fa';
+import SearchInput from '../searchInput';
 import { Container } from './styles';
 
 function Header() {
@@ -22,10 +23,7 @@ function Header() {
               <FaHeart size={10} color="white" /> Lista de desejos
             </li>
           </ul>
-          <div className="search">
-            <FaSearch size={15} color="black" className="custom-icon" />
-            <input type="text" placeholder="Busca" />
-          </div>
+          <SearchInput />
         </div>
       </div>
     </Container>

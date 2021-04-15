@@ -8,14 +8,16 @@ import { Container } from './styles';
 
 function Products() {
   const products = useSelector(state => state.Products.data)
+  const searchValue = useSelector(state => state.Search.searchValue)
+  const [productsRef, setProductsRef] = useState();
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(loadProductsRequest());
     dispatch(loadFavoritesRequest());
   }, []);
   useEffect(() => {
-    console.log("products: ", products)
-  }, [products]);
+    console.log("searchValue: ", searchValue);
+  }, [searchValue]);
   return (
     <Container>
       {products.map((item) => (
