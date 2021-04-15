@@ -7,7 +7,7 @@ class FavoritesController {
     const values = await db.firestore().collection(`favorites`).get();
 
     if (values.empty) {
-      return res.status(403).json();
+      return res.status(200).json([]);
     }
     const { data: { products } } = await axios.get('https://run.mocky.io/v3/66063904-d43c-49ed-9329-d69ad44b885e');
     // return res.json(data);
