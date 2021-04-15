@@ -1,5 +1,6 @@
 const db = require("../database/database");
 const yup = require("yup");
+const axios = require('axios');
 
 class FavoritesController {
   async get(req, res) {
@@ -8,10 +9,17 @@ class FavoritesController {
     if (values.empty) {
       return res.status(403).json();
     }
+    const { data: { products } } = await axios.get('https://run.mocky.io/v3/66063904-d43c-49ed-9329-d69ad44b885e');
+    // return res.json(data);
 
     let data = new Array();
 
-    values.forEach((doc) => data.push(doc.data()));
+    values.forEach((doc) => {
+      const docRef = doc.data();
+      const dataOnProduct = products.find(item => item.id == docRef.id);
+      dataOnProduct.favoritesId = docRef.favoritesId;
+      data.push(dataOnProduct)
+    });
 
     return res.json(data);
   }
@@ -57,7 +65,7 @@ class FavoritesController {
       });
       await schema.validate(req.body, { abortEarly: false });
 
-      const response = await db
+      await db
         .firestore()
         .collection(`favorites`)
         .doc(req.body.favoritesId)

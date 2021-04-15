@@ -6,6 +6,7 @@ import Loader from '../../components/Loader';
 
 import { Container } from './styles';
 import { useSelector } from 'react-redux';
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 function Store() {
   const { loading } = useSelector(state => state.Products)
@@ -13,6 +14,7 @@ function Store() {
     <Container>
       {loading && <Loader />}
       <Header />
+      <Breadcrumbs />
       <Products />
     </Container>
   );

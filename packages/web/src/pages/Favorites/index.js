@@ -6,6 +6,7 @@ import Loader from '../../components/Loader';
 
 import { Container } from './styles';
 import { useSelector } from 'react-redux';
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 function Favorites() {
   const { loading } = useSelector(state => state.Favorites)
@@ -13,6 +14,7 @@ function Favorites() {
     <Container>
       {loading && <Loader />}
       <Header />
+      <Breadcrumbs favorite />
       {/* <Products /> */}
     </Container>
   );
