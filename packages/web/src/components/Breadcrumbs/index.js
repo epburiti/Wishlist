@@ -1,7 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router';
 
-import { AiFillHome } from "react-icons/ai";
 import { Container } from './styles';
 
 function Breadcrumbs({ favorite = false }) {
@@ -9,18 +8,29 @@ function Breadcrumbs({ favorite = false }) {
   return (
     <Container>
       <ul>
-        <li
-          onClick={() => {
-            history.push('/')
-          }}
-        >
+        <li>
+          <button
+            type="button"
+            onClick={() => {
+              history.push('/');
+            }}
+          >
+            Home
+          </button>
           {/* <AiFillHome color="black" size={15} />  */}
-           Home</li>
-        {favorite && <li
-          onClick={() => {
-            history.push('/favorites')
-          }}
-        >Favorites</li>}
+        </li>
+        {favorite && (
+          <li>
+            <button
+              type="button"
+              onClick={() => {
+                history.push('/favorites');
+              }}
+            >
+              Favorites
+            </button>
+          </li>
+        )}
       </ul>
     </Container>
   );

@@ -10,27 +10,36 @@ function Header() {
     <Container>
       <div className="content">
         <div className="content-title">
-          <h5 onClick={
-            () => {
-              history.push('/')
-            }} >MagaNets</h5>
+          <h5>
+            <button
+              type="button"
+              onClick={() => {
+                history.push('/');
+              }}
+            >
+              MagaNets
+            </button>
+          </h5>
         </div>
 
         <div className="content-search">
           <ul>
             <li>
-              <FaMapMarkerAlt size={10} color="white" /> Cidade: São paulo
+              <FaMapMarkerAlt size={10} color="white" />
+              Cidade: São paulo
             </li>
             <li>
               <FaPhoneAlt size={10} color="white" /> Central de atendimento
             </li>
-            <li onClick={
-              () => {
-                history.push('/favorites')
-              }
-            }>
-
-              <FaHeart size={10} color="white" /> Lista de desejos
+            <li>
+              <button
+                type="button"
+                onClick={() => {
+                  history.push('/favorites');
+                }}
+              >
+                <FaHeart size={10} color="white" /> Lista de desejos
+              </button>
             </li>
           </ul>
           <SearchInput />

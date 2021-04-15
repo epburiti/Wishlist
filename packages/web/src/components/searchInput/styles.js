@@ -16,6 +16,4 @@ export const Container = styled.div`
     padding-left: 3rem;
     color: var(--black2);
   }
-
-
 `;

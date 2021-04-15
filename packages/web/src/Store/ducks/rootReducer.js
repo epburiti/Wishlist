@@ -6,7 +6,7 @@ import Search from './Search';
 const appReducer = combineReducers({
   Products,
   Favorites,
-  Search
+  Search,
 });
 
 export default appReducer;

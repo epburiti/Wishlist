@@ -5,13 +5,8 @@ import api from '../../../services/api';
 
 export function* getFavorites() {
   try {
-    const
-      { data: myData }
-        = yield call(
-          api.get,
-          `/favorites`,
-        );
-    console.log("resposta requisição favoritos: ", myData)
+    const { data: myData } = yield call(api.get, `/favorites`);
+    console.log('resposta requisição favoritos: ', myData);
     yield put(loadFavoritesSuccess(myData));
   } catch (err) {
     console.error(err);

@@ -9,7 +9,7 @@ import { Container } from './styles';
 
 function HeartIcon({ id }) {
   const dispatch = useDispatch();
-  const favorites = useSelector(state => state.Favorites.data);
+  const favorites = useSelector((state) => state.Favorites.data);
   const [favorite, setFavorite] = useState(false);
   const [favoritesId, setFavoritesId] = useState();
 
@@ -20,51 +20,48 @@ function HeartIcon({ id }) {
       setFavorite(true);
       setFavoritesId(favorites[indexOf].favoritesId);
     } else {
-      setFavoritesId("");
+      setFavoritesId('');
     }
   }, [favorites]);
   async function addToFavorite() {
     try {
-      setFavorite(state => true);
+      setFavorite(true);
       await api.post('/favorites', {
-        id
+        id,
       });
       dispatch(loadFavoritesRequest());
-
     } catch (error) {
       console.error(error);
-      setFavorite(state => false);
+      setFavorite(false);
 
-      alert("erro ao atualizar favorito, tente novamente...")
+      alert('erro ao atualizar favorito, tente novamente...');
     }
   }
   async function removeFromFavorite() {
-    console.log(favoritesId)
+    console.log(favoritesId);
     try {
-      setFavorite(state => false);
+      setFavorite(false);
       await api.delete('/favorites', {
-        data: { favoritesId: favoritesId }
+        data: { favoritesId },
       });
       dispatch(loadFavoritesRequest());
-
     } catch (error) {
       console.error(error);
-      setFavorite(state => true);
-      alert("erro ao atualizar favorito, tente novamente...")
+      setFavorite(true);
+      alert('erro ao atualizar favorito, tente novamente...');
     }
   }
   return (
     <Container>
-      {
-        !favorite && (
-          <AiOutlineHeart
-            size={20}
-            color="black"
-            onClick={() => {
-              addToFavorite();
-            }}
-          />
-        )}
+      {!favorite && (
+        <AiOutlineHeart
+          size={20}
+          color="black"
+          onClick={() => {
+            addToFavorite();
+          }}
+        />
+      )}
       {favorite && (
         <AiTwotoneHeart
           size={20}

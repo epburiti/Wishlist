@@ -19,12 +19,12 @@ export const Container = styled.div`
       width: 20%;
       h5 {
         font-size: 1.6rem;
-        cursor:pointer;
+        cursor: pointer;
       }
     }
 
     .content-search {
-      max-width:1000px;
+      max-width: 1000px;
       width: 80%;
       ul {
         list-style: none;
@@ -39,7 +39,6 @@ export const Container = styled.div`
           }
         }
       }
-
     }
   }
   @media (max-width: 650px) {

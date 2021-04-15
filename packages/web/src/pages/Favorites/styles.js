@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  height:100vh;
+  height: 100vh;
 
-  .container-favorites{
+  .container-favorites {
     width: 90%;
     margin: 2rem auto;
 
@@ -11,7 +11,7 @@ export const Container = styled.div`
     justify-content: space-around;
     flex-wrap: wrap;
   }
-  h5{
-    font-size:1.5rem;
+  h5 {
+    font-size: 1.5rem;
   }
 `;

@@ -6,8 +6,8 @@ import { Container } from './styles';
 import CardProduct from '../CardProduct';
 
 function Products() {
-  const products = useSelector(state => state.Products.data)
-  const searchValue = useSelector(state => state.Search.searchValue)
+  const products = useSelector((state) => state.Products.data);
+  const searchValue = useSelector((state) => state.Search.searchValue);
   const [productsRef, setProductsRef] = useState([]);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -18,12 +18,14 @@ function Products() {
     setProductsRef(products);
   }, [products]);
   useEffect(() => {
-    if (searchValue.trim() === "") {
+    if (searchValue.trim() === '') {
       setProductsRef(products);
       return;
     }
-    const ref = products.filter((item) => item.title.toLowerCase().includes(searchValue.toLowerCase()))
-    setProductsRef(ref)
+    const ref = products.filter((item) =>
+      item.title.toLowerCase().includes(searchValue.toLowerCase()),
+    );
+    setProductsRef(ref);
   }, [searchValue]);
   return (
     <Container>

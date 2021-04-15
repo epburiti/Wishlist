@@ -5,13 +5,10 @@ import api from '../../../services/api';
 
 export function* getProducts() {
   try {
-    const
-      { data: { products: myData } }
-        = yield call(
-          api.get,
-          `/products`,
-        );
-    console.log("resposta requisição: ", myData)
+    const {
+      data: { products: myData },
+    } = yield call(api.get, `/products`);
+    console.log('resposta requisição: ', myData);
     yield put(loadProductsSuccess(myData));
   } catch (err) {
     console.error(err);
