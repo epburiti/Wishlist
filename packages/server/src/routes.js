@@ -1,13 +1,18 @@
 const express = require('express');
 
+const productsController = require('./Controllers/ProductsController');
+const favoritesController = require('./Controllers/FavoritesController');
+
 const routes = express.Router();
 
-routes.get('/', (request, response) => {
-  return response.json({ message: 'Hello World' })
-})
+// productsController
+routes.get('/products', productsController.get);
+// / productsController
 
-routes.post('/posts', (request, response) => {
-  return response.json({ message: 'New post' })
-})
+// favoritesController
+routes.get('/favorites', favoritesController.get);
+routes.post('/favorites', favoritesController.post);
+// /favoritesController
+
 
 module.exports = routes;
