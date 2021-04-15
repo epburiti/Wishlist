@@ -19,6 +19,7 @@ export const Container = styled.div`
       width: 20%;
       h5 {
         font-size: 1.6rem;
+        cursor:pointer;
       }
     }
 

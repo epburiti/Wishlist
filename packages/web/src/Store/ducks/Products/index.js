@@ -1,4 +1,5 @@
-import produce from 'immer';
+import { enableES5, produce } from 'immer';
+
 import type from './types';
 
 const INITIAL_STATE = {
@@ -7,6 +8,8 @@ const INITIAL_STATE = {
   error: false,
 };
 const reducer = (state = INITIAL_STATE, action) => {
+  enableES5();
+
   switch (action.type) {
     case type.LOAD_PRODUCTS_REQUEST:
       return produce(state, (draft) => {
