@@ -1,0 +1,7 @@
+const base = '@favorites';
+
+export default {
+  LOAD_FAVORITES_REQUEST: `${base}/LOAD_FAVORITES_REQUEST`,
+  LOAD_FAVORITES_SUCCESS: `${base}/LOAD_FAVORITES_SUCCESS`,
+  LOAD_FAVORITES_FAIL: `${base}/LOAD_FAVORITES_FAIL`,
+};
