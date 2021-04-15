@@ -1,0 +1,7 @@
+const base = '@products';
+
+export default {
+  LOAD_PRODUCTS_REQUEST: `${base}/LOAD_PRODUCTS_REQUEST`,
+  LOAD_PRODUCTS_SUCCESS: `${base}/LOAD_PRODUCTS_SUCCESS`,
+  LOAD_PRODUCTS_FAIL: `${base}/LOAD_PRODUCTS_FAIL`,
+};

@@ -2,7 +2,8 @@ import axios from 'axios';
 
 
 const api = axios.create({
-  baseURL: 'https://run.mocky.io/v3/66063904-d43c-49ed-9329-d69ad44b885e',
+  // baseURL: process.env.SERVER_URL | 'http://localhost:8080',
+  baseURL: 'http://localhost:8080',
 });
 
 

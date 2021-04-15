@@ -12,6 +12,7 @@ routes.get('/products', productsController.get);
 // favoritesController
 routes.get('/favorites', favoritesController.get);
 routes.post('/favorites', favoritesController.post);
+routes.delete('/favorites', favoritesController.delete);
 // /favoritesController
 
 

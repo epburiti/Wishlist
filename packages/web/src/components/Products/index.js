@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import api from '../../services/api';
+import { loadProductsRequest } from '../../Store/ducks/Products/actions';
 import { formatPrice } from '../../utils/format';
 import HeartIcon from '../HeartIcon';
 import { Container } from './styles';
 
 function Products() {
-  const [products, setProducts] = useState([]);
-  async function getData() {
-    const { data } = await api.get();
-    setProducts(data.products);
-  }
+  const products = useSelector(state => state.Products.data)
+  const dispatch = useDispatch();
   useEffect(() => {
-    getData();
+    dispatch(loadProductsRequest());
   }, []);
+  useEffect(() => {
+    console.log("products: ", products)
+  }, [products]);
   return (
     <Container>
       {products.map((item) => (

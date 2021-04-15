@@ -23,6 +23,7 @@ export const Container = styled.div`
     }
 
     .content-search {
+      max-width:1000px;
       width: 80%;
       ul {
         list-style: none;
