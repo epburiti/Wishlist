@@ -2,7 +2,7 @@ import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 
 import { useDispatch, useSelector } from 'react-redux';
-import HeartIcon from '../../components/HeartIcon';
+import HeartIcon from '../components/HeartIcon';
 
 jest.mock('react-redux');
 const favorites = [

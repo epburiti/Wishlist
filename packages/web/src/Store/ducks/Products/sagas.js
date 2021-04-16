@@ -8,10 +8,8 @@ export function* getProducts() {
     const {
       data: { products: myData },
     } = yield call(api.get, `/products`);
-    console.log('resposta requisição: ', myData);
     yield put(loadProductsSuccess(myData));
   } catch (err) {
-    console.error(err);
     alert('Houve ume erro');
     console.error(err);
     yield put(loadProductsFail());

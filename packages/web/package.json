@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "webpack-dev-server --mode development --port 3000",
     "build": "webpack --mode=production",
-    "test": "jest --watch"
+    "test": "jest --watchAll",
+    "coverage": "jest --coverage --watchAll=false"
   },
   "dependencies": {
     "axios": "^0.21.1",
@@ -43,11 +44,22 @@
     "webpack-dev-server": "^3.11.0"
   },
   "jest": {
+    "collectCoverageFrom":[
+    "!src/index.js",
+    "!src/App.js",
+    "!src/routes.js",
+    "!src/services/api.js",
+    "!src/utils/*",
+    "!babel.config.js",
+    "!webpack.config.js"
+  ],
+  "coverageDirectory":"src/__tests__/coverage",
     "testMatch": [
       "**/__tests__/**/*.test.js"
     ],
     "setupFilesAfterEnv": [
       "@testing-library/jest-dom/extend-expect"
     ]
+
   }
 }

@@ -2,12 +2,12 @@ import { enableES5, produce } from 'immer';
 
 import type from './types';
 
-const INITIAL_STATE = {
+export const INITIAL_STATE = {
   data: [],
   loading: false,
   error: false,
 };
-const reducer = (state = INITIAL_STATE, action) => {
+export const reducer = (state = INITIAL_STATE, action) => {
   enableES5();
 
   switch (action.type) {

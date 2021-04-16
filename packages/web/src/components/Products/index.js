@@ -9,14 +9,19 @@ function Products() {
   const products = useSelector((state) => state.Products.data);
   const searchValue = useSelector((state) => state.Search.searchValue);
   const [productsRef, setProductsRef] = useState([]);
+  const [customBreak, setCustomBreak] = useState(true);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(loadProductsRequest());
     dispatch(loadFavoritesRequest());
   }, []);
   useEffect(() => {
-    setProductsRef(products);
+    if (customBreak && products.length) {
+      setProductsRef(products);
+      setCustomBreak(false);
+    }
   }, [products]);
+
   useEffect(() => {
     if (searchValue.trim() === '') {
       setProductsRef(products);
