@@ -19,8 +19,7 @@ function Header() {
         <div className="content-search">
           <ul>
             <li>
-              <FaMapMarkerAlt size={10} color="white" />
-              Cidade: São paulo
+              <FaMapMarkerAlt size={10} color="white" /> Cidade: São paulo
             </li>
             <li>
               <FaPhoneAlt size={10} color="white" /> Central de atendimento

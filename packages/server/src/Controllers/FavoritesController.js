@@ -61,7 +61,6 @@ class FavoritesController {
   }
 
   async delete(req, res) {
-    console.log('chamou', req.body);
     try {
       const schema = yup.object().shape({
         favoritesId: yup.string().required('favoritesId é obrigatorio'),

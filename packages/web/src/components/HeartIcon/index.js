@@ -39,7 +39,6 @@ function HeartIcon({ id }) {
     }
   }
   async function removeFromFavorite() {
-    console.log(favoritesId);
     try {
       setFavorite(false);
       await api.delete('/favorites', {
