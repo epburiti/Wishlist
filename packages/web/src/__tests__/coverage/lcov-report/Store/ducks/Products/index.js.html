@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/15</span>
+                <span class='fraction'>12/15</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>4/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>3/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/15</span>
+                <span class='fraction'>12/15</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -97,34 +97,34 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -133,34 +133,34 @@
 &nbsp;
 import type from './types';
 &nbsp;
-const INITIAL_STATE = <span class="cstat-no" title="statement not covered" >{</span>
+export const INITIAL_STATE = {
   data: [],
   loading: false,
   error: false,
 };
-const reducer = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(s</span>tate = <span class="branch-0 cbranch-no" title="branch not covered" >INITIAL_STATE,</span> action) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  enableES5();</span>
+export const reducer = (state = INITIAL_STATE, action) =&gt; {
+  enableES5();
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  switch (action.type) {</span>
+  switch (action.type) {
     case type.LOAD_PRODUCTS_REQUEST:
-<span class="cstat-no" title="statement not covered" >      return produce(state, <span class="fstat-no" title="function not covered" >(d</span>raft) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        draft.loading = true;</span>
-<span class="cstat-no" title="statement not covered" >        draft.error = false;</span>
+      return produce(state, (draft) =&gt; {
+        draft.loading = true;
+        draft.error = false;
       });
     case type.LOAD_PRODUCTS_SUCCESS:
-<span class="cstat-no" title="statement not covered" >      return produce(state, <span class="fstat-no" title="function not covered" >(d</span>raft) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        draft.data = action.payload;</span>
-<span class="cstat-no" title="statement not covered" >        draft.loading = false;</span>
-<span class="cstat-no" title="statement not covered" >        draft.error = false;</span>
+      return produce(state, (draft) =&gt; {
+        draft.data = action.payload;
+        draft.loading = false;
+        draft.error = false;
       });
-    case type.LOAD_PRODUCTS_FAIL:
+<span class="branch-2 cbranch-no" title="branch not covered" >    case type.LOAD_PRODUCTS_FAIL:</span>
 <span class="cstat-no" title="statement not covered" >      return produce(state, <span class="fstat-no" title="function not covered" >(d</span>raft) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        draft.loading = false;</span>
 <span class="cstat-no" title="statement not covered" >        draft.error = true;</span>
       });
 &nbsp;
     default:
-<span class="cstat-no" title="statement not covered" >      return state;</span>
+      return state;
   }
 };
 &nbsp;
@@ -172,7 +172,7 @@ export default reducer;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Apr 16 2021 16:08:47 GMT-0300 (Horário Padrão de Brasília)
+                at Fri Apr 16 2021 16:44:02 GMT-0300 (Horário Padrão de Brasília)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

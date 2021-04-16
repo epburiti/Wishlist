@@ -10,8 +10,8 @@ export function* getProducts() {
     } = yield call(api.get, `/products`);
     yield put(loadProductsSuccess(myData));
   } catch (err) {
+    yield put(loadProductsFail());
     alert('Houve ume erro');
     console.error(err);
-    yield put(loadProductsFail());
   }
 }

@@ -5,7 +5,7 @@ export const INITIAL_STATE = {
   searchValue: '',
 };
 
-export const reducer = (state = INITIAL_STATE, action) => {
+const reducer = (state = INITIAL_STATE, action) => {
   enableES5();
 
   switch (action.type) {

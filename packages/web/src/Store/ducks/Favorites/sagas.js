@@ -9,9 +9,8 @@ export function* getFavorites() {
     console.log('resposta requisição favoritos: ', myData);
     yield put(loadFavoritesSuccess(myData));
   } catch (err) {
+    yield put(loadFavoritesFail());
     console.error(err);
     alert('Houve ume erro');
-    console.error(err);
-    yield put(loadFavoritesFail());
   }
 }

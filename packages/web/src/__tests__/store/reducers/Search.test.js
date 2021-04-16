@@ -1,4 +1,4 @@
-import reducer, { INITIAL_STATE } from '../../../Store/ducks/Search/actions';
+import reducer, { INITIAL_STATE } from '../../../Store/ducks/Search/index';
 import * as Search from '../../../Store/ducks/Search/actions';
 
 describe('Search reducers', () => {
@@ -7,9 +7,12 @@ describe('Search reducers', () => {
 
     expect(state).toStrictEqual(INITIAL_STATE);
   });
-  it('ADD_TECH', () => {
-    const state = reducer(INITIAL_STATE, Search.addTech('Node.js'));
+  it('@search/CHANGE_VALUE', () => {
+    const state = reducer(
+      INITIAL_STATE,
+      Search.changeSearch({ searchValue: 'Node.js' }),
+    );
 
-    expect(state).toStrictEqual(['Node.js']);
+    expect(state).toStrictEqual({ searchValue: { searchValue: 'Node.js' } });
   });
 });
