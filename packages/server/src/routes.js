@@ -5,14 +5,10 @@ const favoritesController = require('./Controllers/FavoritesController');
 
 const routes = express.Router();
 
-// productsController
 routes.get('/products', productsController.get);
-// / productsController
 
-// favoritesController
 routes.get('/favorites', favoritesController.get);
 routes.post('/favorites', favoritesController.post);
-routes.delete('/favorites', favoritesController.delete);
-// /favoritesController
+routes.delete('/favorites/:favoritesId', favoritesController.delete);
 
 module.exports = routes;

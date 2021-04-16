@@ -62,18 +62,13 @@ class FavoritesController {
 
   async delete(req, res) {
     try {
-      const schema = yup.object().shape({
-        favoritesId: yup.string().required('favoritesId é obrigatorio'),
-      });
-
-      await schema.validate(req.body, { abortEarly: false });
-
-      await db
+      console.log(req.params);
+      const response = await db
         .firestore()
         .collection(`favorites`)
-        .doc(req.body.favoritesId)
+        .doc(req.params.favoritesId)
         .delete();
-      return res.status(200).json({ response: 'ok' });
+      return res.status(200).json(response);
     } catch (error) {
       return res.status(400).json({ messages: error });
     }

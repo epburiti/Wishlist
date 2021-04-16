@@ -15,9 +15,9 @@ describe('Favorites tests', () => {
     expect(response.status).toBe(201);
   });
   it('DELETE - should return status 200', async () => {
-    const response = await request(app)
-      .delete('/favorites')
-      .send({ favoritesId: idRef.favoritesId });
+    const response = await request(app).delete(
+      `/favorites/${idRef.favoritesId}`,
+    );
 
     expect(response.status).toBe(200);
   });

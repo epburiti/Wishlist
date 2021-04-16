@@ -3,9 +3,8 @@ const app = require('./app');
 
 const server = http.createServer(app);
 // prod
-// const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8080;
 // homolog
-const port = 8080;
 
 server.listen(port, () => console.log(`Servidor rodando na porta ${port}`));
 // server.on('liste', onListening);
