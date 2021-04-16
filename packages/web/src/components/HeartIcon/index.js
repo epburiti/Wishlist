@@ -58,6 +58,7 @@ function HeartIcon({ id }) {
         <AiOutlineHeart
           size={20}
           color="black"
+          data-testid="HeartIconAdd"
           onClick={() => {
             addToFavorite();
           }}

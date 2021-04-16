@@ -8,11 +8,15 @@ function Breadcrumbs({ favorite = false }) {
     <Container>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/" data-testid="linkHome">
+            Home
+          </Link>
         </li>
         {favorite && (
           <li>
-            <Link to="/favorites">Favorites</Link>
+            <Link to="/favorites" data-testid="linkFavorites">
+              Favorites
+            </Link>
           </li>
         )}
       </ul>

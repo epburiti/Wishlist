@@ -15,6 +15,7 @@ function searchInput() {
       <input
         type="text"
         placeholder="Busca"
+        data-testid="searchInputRef"
         value={searchValue}
         onChange={(event) => {
           dispatch(SearchActions.changeSearch(event.target.value));
