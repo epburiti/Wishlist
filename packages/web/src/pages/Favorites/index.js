@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 import Header from '../../components/Header';
@@ -12,20 +12,44 @@ import { Container } from './styles';
 
 function Favorites() {
   const { loading, data } = useSelector((state) => state.Favorites);
+  const searchValue = useSelector((state) => state.Search.searchValue);
+  const [favoritesRef, setFavoritesRef] = useState([]);
+  const [customBreak, setCustomBreak] = useState(true);
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(loadFavoritesRequest());
   }, []);
+
+  useEffect(() => {
+    if (customBreak && data.length) {
+      setFavoritesRef(data);
+      setCustomBreak(false);
+    }
+  }, [data]);
+
+  useEffect(() => {
+    if (searchValue.trim() === '') {
+      setFavoritesRef(data);
+      return;
+    }
+    const ref = data.filter((item) =>
+      item.title.toLowerCase().includes(searchValue.toLowerCase()),
+    );
+    setFavoritesRef(ref);
+  }, [searchValue]);
   return (
     <Container>
       {loading && <Loader />}
       <Header />
       <Breadcrumbs favorite />
       <div className="container-favorites">
-        {data.map((item) => (
+        {favoritesRef.map((item) => (
           <CardProduct {...item} key={item.id} />
         ))}
-        {!data.length && <h5>Você não tem nenhum item salvo nos favoritos</h5>}
+        {!favoritesRef.length && (
+          <h5>Você não tem nenhum item salvo nos favoritos</h5>
+        )}
       </div>
     </Container>
   );
