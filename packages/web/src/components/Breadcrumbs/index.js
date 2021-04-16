@@ -1,34 +1,18 @@
 import React from 'react';
-import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
 
 import { Container } from './styles';
 
 function Breadcrumbs({ favorite = false }) {
-  const history = useHistory();
   return (
     <Container>
       <ul>
         <li>
-          <button
-            type="button"
-            onClick={() => {
-              history.push('/');
-            }}
-          >
-            Home
-          </button>
-          {/* <AiFillHome color="black" size={15} />  */}
+          <Link to="/">Home</Link>
         </li>
         {favorite && (
           <li>
-            <button
-              type="button"
-              onClick={() => {
-                history.push('/favorites');
-              }}
-            >
-              Favorites
-            </button>
+            <Link to="/favorites">Favorites</Link>
           </li>
         )}
       </ul>

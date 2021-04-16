@@ -14,6 +14,7 @@ function HeartIcon({ id }) {
   const [favoritesId, setFavoritesId] = useState();
 
   useEffect(() => {
+    if (!favorites) return;
     const indexOf = favorites.findIndex((item) => item.id == id);
 
     if (indexOf >= 0) {

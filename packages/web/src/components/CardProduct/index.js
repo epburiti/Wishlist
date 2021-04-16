@@ -10,7 +10,7 @@ function CardProduct({ id, title, image, price }) {
         <div className="favorite-icon">
           <HeartIcon id={id} />
         </div>
-        <img src={image} alt={title} />
+        <img src={image} alt={title} data-testid="cardImage" />
         <p className="title">{title}</p>
         <p className="price">{formatPrice(price)}</p>
       </div>
