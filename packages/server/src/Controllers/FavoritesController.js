@@ -14,13 +14,13 @@ class FavoritesController {
     } = await axios.get(
       'https://run.mocky.io/v3/66063904-d43c-49ed-9329-d69ad44b885e',
     );
-    // return res.json(data);
 
     const data = [];
 
     values.forEach((doc) => {
       const docRef = doc.data();
       const dataOnProduct = products.find((item) => item.id == docRef.id);
+      if (!dataOnProduct) return;
       dataOnProduct.favoritesId = docRef.favoritesId;
       data.push(dataOnProduct);
     });
@@ -46,13 +46,13 @@ class FavoritesController {
           id: req.body.id,
         });
 
-        const response2 = await db
+        await db
           .firestore()
           .collection(`favorites`)
           .doc(response.id)
           .set({ id: req.body.id, favoritesId: response.id });
 
-        return res.status(200).json({ response2 });
+        return res.status(201).json({ favoritesId: response.id });
       }
       return res.status(400).json({ messages: 'Esse favorito já está salvo' });
     } catch (err) {
@@ -65,6 +65,7 @@ class FavoritesController {
       const schema = yup.object().shape({
         favoritesId: yup.string().required('favoritesId é obrigatorio'),
       });
+
       await schema.validate(req.body, { abortEarly: false });
 
       await db

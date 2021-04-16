@@ -6,7 +6,6 @@
   "scripts": {
     "start": "nodemon src/server.js",
     "test": "jest --watchAll"
-
   },
   "dependencies": {
     "axios": "^0.21.1",
@@ -15,5 +14,20 @@
     "firebase-admin": "^9.6.0",
     "yup": "^0.32.9"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "faker": "^5.5.3",
+    "supertest": "^6.1.3"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+
+    ],
+    "coverageDirectory": "__tests__/coverage",
+    "testMatch": [
+      "**/__tests__/**/*.test.js"
+    ],
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom/extend-expect"
+    ]
+  }
 }
