@@ -1,6 +1,7 @@
 # Wishlist
 
 > App para listar e escolher os favoritos de uma lista de produtos.
+> Arquivos configurados em Monorepo(obs: os testes não ficaram configurados globalmente pois o React está utilizando webpack)
 
 ## Instalação
 
