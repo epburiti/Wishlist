@@ -98,9 +98,8 @@ _OBS:. A execução dos testes efetua a limpeza das tabelas ao final dos testes_
 
 #### `DELETE:` `/favorites/<favoriteId>` `Deleta do firebase com base no favoriteId`
 
-#### `POST:` `/favorites` `Adiciona no firebase o favorito`
+#### `POST:` `/favorites` `Adiciona no firebase o favorito e o favoriteId é gerado automaticamente`
 
 ```json
 	"id":"636",
-	"favoritesId":"(GERADO AUTOMATICAMENTE PELO FIREBASE)"
 ```
