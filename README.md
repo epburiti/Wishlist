@@ -94,11 +94,11 @@ _OBS:. A execução dos testes efetua a limpeza das tabelas ao final dos testes_
 
 #### Favorites:
 
-##### `GET:` `/favoritos` `retorna os dados dos favoritos que estão salvos no firebase`
+##### `GET:` `/favorites` `retorna os dados dos favoritos que estão salvos no firebase`
 
-#### `DELETE:` `/favoritos/<favoriteId>` `Deleta do firebase com base no favoriteId`
+#### `DELETE:` `/favorites/<favoriteId>` `Deleta do firebase com base no favoriteId`
 
-#### `POST:` `/favoritos` `Adiciona no firebase o favorito`
+#### `POST:` `/favorites` `Adiciona no firebase o favorito`
 
 ```json
 	"id":"636",
