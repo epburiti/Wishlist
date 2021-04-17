@@ -31,10 +31,10 @@ module.exports = {
     "radix": 'off',
     eqeqeq: ["off", "smart"],
     "react/prop-types": "off",
-    "no-param-reassign": [2, { "props": false }],
     "react/jsx-props-no-spreading": "off",
     "class-methods-use-this": "off",
-    "import/no-named-as-default": 0
+    "import/no-named-as-default": 0,
+    "no-param-reassign": "off"
   },
 
 };

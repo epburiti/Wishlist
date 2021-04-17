@@ -14,7 +14,6 @@ function Favorites() {
   const { loading, data } = useSelector((state) => state.Favorites);
   const searchValue = useSelector((state) => state.Search.searchValue);
   const [favoritesRef, setFavoritesRef] = useState([]);
-  // const [customBreak, setCustomBreak] = useState(true);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -23,7 +22,6 @@ function Favorites() {
 
   useEffect(() => {
     setFavoritesRef(data);
-    // setCustomBreak(false);
   }, [data]);
 
   useEffect(() => {
