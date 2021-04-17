@@ -1,4 +1,4 @@
-# Wishlist
+# :bookmark_tabs: Wishlist
 
 > App para listar e escolher os favoritos de uma lista de produtos.
 > Arquivos configurados em Monorepo(obs: os testes não ficaram configurados globalmente pois o React está utilizando webpack)
@@ -23,6 +23,8 @@
 Você deverá ter em sua máquina os seguinte itens:
 
 - [Node.js](http://nodejs.org/) 10.0.0 (ou superior)
+- [React](https://pt-br.reactjs.org/)
+- [Git](http://git-scm.com/)
 
 1. Faça um Fork ou clone este repositório.
 
