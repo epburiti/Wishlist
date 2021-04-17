@@ -3,6 +3,21 @@
 > App para listar e escolher os favoritos de uma lista de produtos.
 > Arquivos configurados em Monorepo(obs: os testes não ficaram configurados globalmente pois o React está utilizando webpack)
 
+## :rocket:Tecnologias usadas
+
+- [React](https://pt-br.reactjs.org/)
+- [Redux](https://redux.js.org/)
+- [Redux Saga](https://redux-saga.js.org/)
+- [Node.js](https://nodejs.org/)
+- [expres](https://expressjs.com/pt-br/)
+- [jest](https://jestjs.io/pt-BR/)
+- [Axios](https://github.com/axios/axios)
+- [Styled components](https://styled-components.com/)
+- [webpack](https://webpack.js.org/)
+- [babel](https://babeljs.io/)
+- [eslint](https://eslint.org/)
+- [prettier](https://prettier.io/)
+
 ## Instalação
 
 Você deverá ter em sua máquina os seguinte itens:
