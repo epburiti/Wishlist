@@ -62,7 +62,6 @@ class FavoritesController {
 
   async delete(req, res) {
     try {
-      console.log(req.params);
       const response = await db
         .firestore()
         .collection(`favorites`)

@@ -11,7 +11,7 @@ Você deverá ter em sua máquina os seguinte itens:
 
 1. Faça um Fork ou clone este repositório.
 
-2. Instale as dependências do projeto:
+2. Instale as dependências do projeto na pasta root:
 
    ```sh
    npm install
