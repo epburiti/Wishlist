@@ -90,15 +90,15 @@ _OBS:. A execução dos testes efetua a limpeza das tabelas ao final dos testes_
 
 #### Products:
 
-_GET:. retorna os dados do produto do backend_
+#### `GET:` `/products` `retorna os dados do produto do backend`
 
 #### Favorites:
 
 ##### `GET:` `/favoritos` `retorna os dados dos favoritos que estão salvos no firebase`
 
-_DELETE: /favoritos/<favoriteId>_
+#### `DELETE:` `/favoritos/<favoriteId>` `Deleta do firebase com base no favoriteId`
 
-_POST:. /favoritos retorna os dados dos favoritos que estão salvos no firebase_
+#### `POST:` `/favoritos` `Adiciona no firebase o favorito`
 
 ```json
 	"id":"636",
