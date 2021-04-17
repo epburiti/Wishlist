@@ -101,5 +101,7 @@ _OBS:. A execução dos testes efetua a limpeza das tabelas ao final dos testes_
 #### `POST:` `/favorites` `Adiciona no firebase o favorito e o favoriteId é gerado automaticamente`
 
 ```json
-	"id":"636",
+{
+  "id": "636"
+}
 ```
