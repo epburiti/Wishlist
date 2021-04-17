@@ -1,11 +1,11 @@
-import { call, put } from 'redux-saga/effects';
+import { put } from 'redux-saga/effects';
 
 import { loadFavoritesSuccess, loadFavoritesFail } from './actions';
-import api from '../../../services/api';
+import { getFavoritesData } from '../../../services/favorites';
 
 export function* getFavorites() {
   try {
-    const { data: myData } = yield call(api.get, `/favorites`);
+    const { data: myData } = yield getFavoritesData();
     yield put(loadFavoritesSuccess(myData));
   } catch (err) {
     yield put(loadFavoritesFail());

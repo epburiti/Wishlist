@@ -14,7 +14,7 @@ function Favorites() {
   const { loading, data } = useSelector((state) => state.Favorites);
   const searchValue = useSelector((state) => state.Search.searchValue);
   const [favoritesRef, setFavoritesRef] = useState([]);
-  const [customBreak, setCustomBreak] = useState(true);
+  // const [customBreak, setCustomBreak] = useState(true);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -22,10 +22,8 @@ function Favorites() {
   }, []);
 
   useEffect(() => {
-    if (customBreak && data.length) {
-      setFavoritesRef(data);
-      setCustomBreak(false);
-    }
+    setFavoritesRef(data);
+    // setCustomBreak(false);
   }, [data]);
 
   useEffect(() => {
@@ -44,10 +42,9 @@ function Favorites() {
       <Header />
       <Breadcrumbs favorite />
       <div className="container-favorites">
-        {favoritesRef.map((item) => (
-          <CardProduct {...item} key={item.id} />
-        ))}
-        {!favoritesRef.length && (
+        {favoritesRef.length ? (
+          favoritesRef.map((item) => <CardProduct {...item} key={item.id} />)
+        ) : (
           <h5>Você não tem nenhum item salvo nos favoritos</h5>
         )}
       </div>

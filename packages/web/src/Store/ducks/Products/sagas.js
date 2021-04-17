@@ -1,13 +1,13 @@
-import { call, put } from 'redux-saga/effects';
+import { put } from 'redux-saga/effects';
 
 import { loadProductsSuccess, loadProductsFail } from './actions';
-import api from '../../../services/api';
+import { getProductsData } from '../../../services/products';
 
 export function* getProducts() {
   try {
     const {
       data: { products: myData },
-    } = yield call(api.get, `/products`);
+    } = yield getProductsData();
     yield put(loadProductsSuccess(myData));
   } catch (err) {
     yield put(loadProductsFail());

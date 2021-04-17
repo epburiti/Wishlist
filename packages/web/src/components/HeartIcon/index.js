@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import { AiOutlineHeart, AiTwotoneHeart } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
-import api from '../../services/api';
+import { deleteFavorite, newFavorite } from '../../services/favorites';
 import { loadFavoritesRequest } from '../../Store/ducks/Favorites/actions';
 
 import { Container } from './styles';
@@ -27,9 +27,7 @@ function HeartIcon({ id }) {
   async function addToFavorite() {
     try {
       setFavorite(true);
-      await api.post('/favorites', {
-        id,
-      });
+      await newFavorite(id);
       dispatch(loadFavoritesRequest());
     } catch (error) {
       console.error(error);
@@ -41,7 +39,7 @@ function HeartIcon({ id }) {
   async function removeFromFavorite() {
     try {
       setFavorite(false);
-      await api.delete(`/favorites/${favoritesId}`);
+      await deleteFavorite(favoritesId);
       dispatch(loadFavoritesRequest());
     } catch (error) {
       console.error(error);
