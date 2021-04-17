@@ -86,7 +86,7 @@ yarn test
 
 _OBS:. A execução dos testes efetua a limpeza das tabelas ao final dos testes_
 
-##Endpoints
+## Endpoints
 
 #### Products:
 
@@ -94,13 +94,13 @@ _GET:. retorna os dados do produto do backend_
 
 #### Favorites:
 
-_GET:. /favoritos retorna os dados dos favoritos que estão salvos no firebase_
+##### `GET:` `/favoritos` `retorna os dados dos favoritos que estão salvos no firebase`
 
 _DELETE: /favoritos/<favoriteId>_
 
 _POST:. /favoritos retorna os dados dos favoritos que estão salvos no firebase_
 
-```sh
-	"id":"2332",
+```json
+	"id":"636",
 	"favoritesId":"(GERADO AUTOMATICAMENTE PELO FIREBASE)"
 ```
